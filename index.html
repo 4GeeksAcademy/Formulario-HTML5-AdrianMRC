@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pago</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-check-input { margin-right: 8px; }
+        textarea { resize: none; }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <form class="bg-white p-4 rounded shadow-sm" novalidate>
+            <h5 class="text-danger mb-4">Save fields are missing</h5>
+            
+            <!-- Card Number -->
+            <div class="mb-3">
+                <label class="form-label">Card #</label>
+                <input type="text" class="form-control" 
+                       pattern="\d{13,16}" 
+                       inputmode="numeric"
+                       maxlength="16"
+                       placeholder="XXXX XXXX XXXX XXXX"
+                       required>
+            </div>
+
+            <!-- First Name & City -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-control" required>
+                </div>
+            </div>
+
+            <!-- Accept & CVC -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">We accept:</label>
+                    <div class="text-muted">Visa, MasterCard, AMEX</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">CVC #</label>
+                    <input type="number" class="form-control" 
+                           min="100" max="9999" 
+                           placeholder="000" required>
+                </div>
+            </div>
+
+            <!-- Last Name & State -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">State</label>
+                    <select class="form-select" required>
+                        <option value="" disabled selected>Pick a state</option>
+                        <option>California</option>
+                        <option>Texas</option>
+                        <option>New York</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="3" 
+                          placeholder="Add any notes here."></textarea>
+            </div>
+
+            <!-- Amount -->
+            <div class="mb-3">
+                <label class="form-label">Amount</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" 
+                           step="0.01" 
+                           placeholder="Amount" 
+                           required>
+                </div>
+            </div>
+
+            <!-- Postal Code & Checkboxes -->
+            <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <label class="form-label">Postal Code</label>
+                    <input type="text" class="form-control" 
+                           pattern="[0-9]{5}" 
+                           placeholder="12345" 
+                           required>
+                </div>
+                <div class="col-md-6 d-flex align-items-end">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex justify-content-end gap-2">
+                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
