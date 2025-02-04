@@ -114,8 +114,9 @@
                 </div>
                 <div class="col-md-3">
                     <label class="form-label">Postal Code</label>
-                    <input type="text" class="form-control" inputmode="numeric" maxlength="5"
-                        placeholder="12345" name="post-code" required>
+                    <input type="text" class="form-control" inputmode="numeric" 
+                        oninput="this.value = this.value.replace(/[^A-Za-z]/g,'')"
+                        maxlength="5" placeholder="12345" name="post-code" required>
                 </div>
             </div>
 
